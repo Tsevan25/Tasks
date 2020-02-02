@@ -1,4 +1,4 @@
-package jc01_2020.Tsevan25.jc01_2020.lesson02;
+package jc01_2020.lesson02;
 
 /*
 *
@@ -19,5 +19,16 @@ public class Task4 {
         int first = scanner.nextInt();
         int second = scanner.nextInt();
         int third = scanner.nextInt();
+
+        if (second>first && first>third || third>first && first>second){
+            System.out.println(first);
+        }
+        else if (first>second && second>third || third>second && second>first){
+            System.out.println(second);
+        }
+        else {
+            System.out.println(third);
+        }
+
     }
 }
