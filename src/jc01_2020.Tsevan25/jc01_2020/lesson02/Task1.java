@@ -20,15 +20,23 @@ public class Task1 {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Введите число");
 		int numeric = scanner.nextInt();
-		System.out.println("Число "+numeric);
+		if (numeric < 4){
+			System.out.println("Число "+numeric);
+		} else {
+			System.out.println("Другое число");
+		}
 		int numeric2 = scanner.nextInt();
-		System.out.println("Число "+numeric2);
+		if (numeric2 < 4){
+			System.out.println("Число "+numeric2);
+		} else {
+			System.out.println("Другое число");
+		}
 		int numeric3 = scanner.nextInt();
-		System.out.println("Число "+numeric3);
-		int numeric4 = scanner.nextInt();
-		System.out.println("Число "+numeric4);
-		String string = scanner.nextLine();
-		System.out.println("Другое число");
+		if (numeric3 < 4){
+			System.out.println("Число "+numeric3);
+		} else {
+			System.out.println("Другое число");
+		}
 
 	}
 }
