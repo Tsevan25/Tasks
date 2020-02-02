@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class Task2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+          Scanner scanner = new Scanner(System.in);
         System.out.println("Введите целое число");
         long numeric = scanner.nextLong();
         if (numeric % 3 == 0) {
@@ -30,6 +30,14 @@ public class Task2 {
         } else {
             System.out.println("Не делится");
         }
+
+        long numeric3 = scanner.nextLong();
+        if (numeric3 % 3 == 0) {
+            System.out.println("Делится");
+        } else {
+            System.out.println("Не делится");
+        }
+
 
     }
 }
