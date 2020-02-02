@@ -16,8 +16,23 @@ import java.util.Scanner;
 
 public class Task3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+      Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите делимое число");
         long first = scanner.nextLong();
+        System.out.println("Введите делитель");
         long second = scanner.nextLong();
+        long a = first / second;
+        long b = first % second;
+        float c = first % second;
+
+
+        if (first % second == 0) {
+            System.out.println("Делится. Частное = " + a);
+        } else if (second % first != 0) {
+            System.out.println("Не делится. Частное = " + a + ". Остаток = " + b);
+        } else {
+            System.out.println("Недопустимая операция");
+        }
+        
     }
 }
