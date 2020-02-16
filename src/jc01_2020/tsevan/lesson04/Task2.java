@@ -27,7 +27,6 @@ public class Task2 {
 			array[i] = scanner.nextInt();
 			sum += array[i];}
 
-
 			j = sum / array.length;
 		for (int i = 0; i < array.length; i++) {
 			if (j < array[i]) {
