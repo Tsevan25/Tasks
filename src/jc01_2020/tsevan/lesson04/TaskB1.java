@@ -33,5 +33,9 @@ public class TaskB1 {
 		}
 		int a = scanner.nextInt();
 		int b = scanner.nextInt();
-
+	    
+	    for (int i = 0; i < array.length; i++) {
+			if (a <= array[i] && b >= array[i]) {
+				array[i] = 0;
+			}}
 	}}
