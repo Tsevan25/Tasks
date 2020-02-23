@@ -17,20 +17,27 @@ import java.util.Scanner;
 public class TaskB2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int[][] array = new int[4][3];
-		int min = 0;
-		for (int i = 0; i < array[0].length; i++) {
-			for (int j = 0; j < array.length; j++) {
-				array[j][i] = scanner.nextInt();
-				if (min > array[j][i]) {
-					min = array[j][i];
+        int[][] array = new int[4][3];
+
+        for (int i = 0; i < array[0].length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[j][i] = scanner.nextInt();
+            }
+        }
+        int min = array[0][0];
+        for (int i = 0; i < array[0].length; i++) {
+			for (int[] ints : array) {
+				if (ints[i] < min) {
+					min = ints[i];
 				}
-
-				for (i = 0; i < array.length-1; i++) {
-					for (j = 0; j < array[0].length-1; j++) {
-						if (min == array[i][j]);
-
-					} }
-				System.out.println("Cтрока: " + j + ", Cтолбец: " + i);
-			}} } }
-
+			}
+		}
+            for (int i = 0; i < array[0].length; i++) {
+                for (int j = 0; j < array.length; j++) {
+                    if (array[j][i] == min) {
+						System.out.println("строка: " + i + ", столбец: " + j);
+                    }
+                }
+            }
+        }
+    }
