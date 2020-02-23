@@ -17,8 +17,10 @@ public class TaskB2 {
 		Scanner scanner = new Scanner(System.in);
 		String str = scanner.nextLine();
 		boolean result = false;
-
-
+		String regexp = "^([A-Za-z]+[\\-]+[A-Za-z]+$|^[А-Яа-я]+[\\-]+[А-Яа-я]+$)";
+		Pattern pattern = Pattern.compile(regexp);
+		Matcher matcher = pattern.matcher(str);
+		result = matcher.find();
 		System.out.println(result);
 	}
 }
