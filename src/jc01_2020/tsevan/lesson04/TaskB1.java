@@ -25,17 +25,32 @@ import java.util.Scanner;
 
 public class TaskB1 {
     public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int[] array = new int[7];
-		int sum = 0;
-		for (int i = 0; i < array.length; i++) {
-			array[i] = scanner.nextInt();
-		}
-		int a = scanner.nextInt();
-		int b = scanner.nextInt();
-	    
-	    for (int i = 0; i < array.length; i++) {
-			if (a <= array[i] && b >= array[i]) {
-				array[i] = 0;
-			}}
-	}}
+		 Scanner scanner = new Scanner(System.in);
+        int[] array = new int[7];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int temporary = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (a <=array[i] && b >=array[i]) {
+                array[i] = 0;
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+			int addition = i + 1;
+            for (int j = addition; j < array.length; j++) {
+                if (array[i] == 0) {
+                    temporary = array[i];
+                    array[i] = array[j];
+                    array[j] = temporary;
+                }
+            }
+        }
+        for (int result : array) {
+            System.out.println(result);
+        }
+    }
+}
