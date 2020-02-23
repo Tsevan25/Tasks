@@ -15,17 +15,25 @@ import java.util.Scanner;
 
 public class Task4 {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		int[] array = new int[7];
-		int min = 0, max = 0, sum = 0, walk_on; //
-		for (int i = 0; i < array.length; i++)
-		{ array[i] = scanner.nextInt();
-			max = array[i] > array[max] ? i : max;
-			min = array[i] < array[min] ? i : min; }
-
-			walk_on = min < max ? 1: -1;
-
-		for (int i = walk_on + min;  walk_on * max > i * walk_on; i = walk_on + i)
-		{sum +=array[i];}
-			System.out.println(sum);  }  }
-
+		 Scanner scanner = new Scanner(System.in);
+        int[] array = new int[7];
+        int min = 0;
+        int max = 0;
+        int sum = 0;
+        int interim; //
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+            max = array[i] > array[max] ? i : max;
+            min = array[i] < array[min] ? i : min;
+        }
+        if (min < max) {
+            interim = 1;
+        } else {
+            interim = -1;
+        }
+        for (int i = min + interim; max * interim > i * interim; i = interim + i) {
+            sum += array[i];
+        }
+        System.out.println(sum);
+    }
+}
