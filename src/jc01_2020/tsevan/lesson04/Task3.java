@@ -17,15 +17,18 @@ import java.util.Scanner;
 public class Task3 {
     public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int[] array =new int[5];
-		int minValue = array[0];
-		int minIndex = 0;
-		for (int i = 1; i < array.length; i++) {
-			array[i] = scanner.nextInt();
-			if (array[i] < minValue ){
-			minValue = array[i];
-			minIndex = i;
-			}  }
-		System.out.println("Минимальный по модулю элемент массива:  " + minIndex);
-    } }
+        int[] array = new int[5];
+        int minValue = array[0];
+        int minIndex = 0;
+        for (int i = 1; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+            if (array[i] < minValue) {
+                minValue = array[i];
+                minIndex = i;
+            }
+        }
+        System.out.println("Минимальный по модулю элемент массива:  " + minIndex);
+    }
+}
+
 
