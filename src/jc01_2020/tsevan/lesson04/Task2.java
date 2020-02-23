@@ -21,16 +21,17 @@ public class Task2 {
     public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int[] array = new int[7];
-		int sum =0;
-		int j;
-		for (int i = 0; i < array.length; i++) {
-			array[i] = scanner.nextInt();
-			sum += array[i];}
-
-			j = sum / array.length;
-		for (int i = 0; i < array.length; i++) {
-			if (j < array[i]) {
-				System.out.println(array[i]);
-			} }}}
-
-
+		 int sum = 0;
+        int j;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+            sum += array[i];
+        }
+        j = sum / array.length;
+        for (int value : array) {
+            if (j < value) {
+                System.out.println(value);
+            }
+        }
+    }
+}
