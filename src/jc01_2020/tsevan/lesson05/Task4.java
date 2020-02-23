@@ -19,7 +19,13 @@ import java.util.Scanner;
 
 public class Task4 {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String str = scanner.nextLine();
-	}
+	Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        String[] strings = str.trim().split("\\D");
+        for (int i = 0; i < strings.length; i++) {
+            if (!strings[i].equals("")) {
+                System.out.println(strings[i]);
+            }
+        }
+    }
 }
