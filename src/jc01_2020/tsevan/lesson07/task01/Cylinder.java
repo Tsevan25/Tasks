@@ -1,8 +1,18 @@
 package jc01_2020.tsevan.lesson07.task01;
 
-public class Cylinder {
+public class Cylinder extends Shape {
 
 	private double radius;
 	private double height;
+	public Cylinder(final double radius, final double height) {
+		this.radius = radius;
+		this.height = height;
+		setVolume(calculateVolume());
+	}
+
+	public double calculateVolume() {
+		return Math.PI * Math.pow(radius, 2) * height;
+	}
+
 
 }

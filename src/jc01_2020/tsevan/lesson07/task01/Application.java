@@ -16,6 +16,17 @@ package jc01_2020.tsevan.lesson07.task01;
 public class Application {
 
 	public static void main(String[] args) {
+		Box box = new Box(20000);
+
+		Shape cylinder = new Cylinder(12, 22);
+		Shape parallelepiped = new Parallelepiped(3, 4, 5);
+		Shape pyramid = new Pyramid(20, 5);
+		Shape sphere = new Sphere(7);
+
+		System.out.println(box.add(cylinder));
+		System.out.println(box.add(parallelepiped));
+		System.out.println(box.add(pyramid));
+		System.out.println(box.add(sphere));
 
 	}
 
