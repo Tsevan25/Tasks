@@ -10,13 +10,41 @@ package jc01_2020.tsevan.lesson09.task06;
  *
  */
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Application {
 
-	public static void main(String[] args) {
-		// Объявить список
-		for (int i = 0; i < 1_000_000; i++) {
-			// Заполнить список
-		}
-	}
+    public static void main(String[] args) {
+        // Объявить список
+        ArrayList<Double> list1 = new ArrayList<>();
+        LinkedList<Double> list2 = new LinkedList<>();
+        for (int i = 0; i < 1_000_000; i++) {
+            // Заполнить список
+            list1.add(Math.random());
+            list2.add(Math.random());
+        }
+        long time = System.currentTimeMillis();
+        {
+            int i = 0;
+            while (i < 100_000) {
+                list1.add(0, 0d);
+                i++;
+            }
+        }
+        long time2 = System.currentTimeMillis();
+        long result = time2 - time;
+        System.out.println("Arraylist: " + result);
+
+        time = System.currentTimeMillis();
+        int i = 0;
+        while (i < 100_000) {
+            list2.addFirst(0d);
+            i++;
+        }
+        time2 = System.currentTimeMillis();
+        long result2 = time2 - time;
+        System.out.print("Linkedlist: " + result2);
+    }
 
 }
