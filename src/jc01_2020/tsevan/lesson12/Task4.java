@@ -13,10 +13,30 @@ package jc01_2020.tsevan.lesson12;
  *
  */
 
-public class Task4 {
-	public static void main(String[] args) {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
 
-	}
+public class Task4 {
+    public static void main(String[] args) {
+        Map<Car, String> car = new HashMap<>();
+        Random random = new Random();
+
+
+    }
 }
 
+class Car {
 
+    enum Color {
+        BLACK, YELLOW, WHITE, RED, PINK
+    }
+
+    String color;
+
+    public Car(String color) {
+        this.color = color;
+    }
+
+}
