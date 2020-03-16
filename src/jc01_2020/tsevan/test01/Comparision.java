@@ -12,13 +12,27 @@ package jc01_2020.tsevan.test01;
 import java.util.Scanner;
 
 public class Comparision {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
-		int firstSum = 0;
-		int secondSum = 0;
-		int[] array = new int[input.length()];
-		for (int i = 0; i < array.length; i++) {
-			array[i] = scanner.nextInt();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        int firstSum = 0;
+        int secondSum = 0;
+        char[] split = input.toCharArray();
+        int[] array = new int[split.length];
+        for (int i = 0; i < split.length; i++) {
+            array[i] = (int) split[i] - 48;
+        }
+        for (int i = 0; i < split.length; i++) {
+            if ((i + 3) % 4 == 0 && array[i] < 5) {
+                firstSum += array[i];
+            }
 
-}}}
+        if (firstSum == secondSum) {
+			System.out.println("равны");
+		} else if (firstSum > secondSum) {
+			System.out.println("firstsum "+ firstSum);
+		} else {
+        	secondSum += array[i];
+		}}
+    }
+}

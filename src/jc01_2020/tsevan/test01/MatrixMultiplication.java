@@ -65,10 +65,38 @@ public class MatrixMultiplication {
 
 		// Вывести результирующую матрицу по одному значению через пробел (порядок вывода - построчно)
 
+		for (int i = 0; i < rowsA; i++) {
+			for (int j = 0; j < columnsA; j++) {
+				a[i][j] = scanner.nextInt();
+			}
+		}
+		for (int i = 0; i < rowsB; i++) {
+			for (int j = 0; j < columnsB; j++) {
+				b[i][j] = scanner.nextInt();
 
-
+			}
+		}
+		for (int i = 0; i < rowsA; i++) {
+			for (int j = 0; j < columnsA; j++) {
+				System.out.println(a[i][j]);
+	}
 }
+		for (int i = 0; i < rowsB; i++) {
+			for (int j = 0; j < columnsB; j++) {
+				System.out.println(a[i][j]);
+
+			}}
+		for (int i = 0; i < rowsB; i++) {
+			for (int j = 0; j < columnsB; j++) {
+				//c[i][j] = calculate(i,j);
 
 
 
-}
+
+	//private static void calculate(int row, int column) {
+	int result =0;
+	for (int k = 0; k < columnsA; k++); {
+		//result += a[row][] + b[][column];
+			}
+		//return result;
+		}}}}

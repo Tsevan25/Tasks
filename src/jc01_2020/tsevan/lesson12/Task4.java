@@ -13,30 +13,67 @@ package jc01_2020.tsevan.lesson12;
  *
  */
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Task4 {
     public static void main(String[] args) {
-        Map<Car, String> car = new HashMap<>();
         Random random = new Random();
-
+        List<Car> garage = new ArrayList<>();
+        for (int i = 0; i <50 ; i++) {
+            garage.add(new Car(Color.values()[random.nextInt(5)]));
+        }
+        String string = garage.stream()
+                .peek(car -> car.setColored(car.getColor().getColor()))
+        .limit(10)
+        .filter(car -> car.getColor()==Color.values()[Color.values().length-1])
+        .peek(car -> System.out.println(car.getColor()))
+        .map(Car::getColored)
+        .collect(Collectors.joining(" "));
+        System.out.println(string);
 
     }
 }
 
 class Car {
+    private String colored;
+    private Color color;
 
-    enum Color {
-        BLACK, YELLOW, WHITE, RED, PINK
+    public Car(Color color) {
+        this.color = color;
+
     }
 
-    String color;
 
-    public Car(String color) {
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
         this.color = color;
     }
 
+    public String getColored() {
+        return colored;
+    }
+
+    public void setColored(String colored) {
+        this.colored = colored;
+    }
+}
+enum Color {
+    BLACK("Black"),
+    YELLOW("Yellow"),
+    WHITE("White"),
+    RED("Red"),
+    PINK("Pink");
+
+   private String color;
+   Color (String color) {
+       this.color = color;
+   }
+    public String getColor(){
+        return color;
+    }
 }
