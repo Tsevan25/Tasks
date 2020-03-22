@@ -42,26 +42,25 @@ public class Task3 {
 		map.put("Яшин", "Станислав");//20
 		// full the map
 
-		System.out.println(map);
-		map.replaceAll((String key, String value) -> {
-			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.append(value);
-			stringBuilder.append(key);
-			return stringBuilder.toString();
-		});
+        System.out.println(map);
+        for (Map.Entry<String, String> mapEntry : map.entrySet()) {
+            String key = mapEntry.getKey();
+            String value = mapEntry.getValue();
+            map.replace(key, value + key);
+        }
 
-		HashMap<String, String> collect = new HashMap<>();
-		for (Map.Entry<String, String> x : map.entrySet()) {
-			if (16 > x.getValue().length()) {
-				if (collect.put(x.getKey(), x.getValue()) != null) {
-					throw new IllegalStateException("Duplicate key");
-				}
-			}
-		}
-		List<String> newMap = new ArrayList<>(collect.values());
-		System.out.println(newMap);
+        Map<String, String> newMap = map.entrySet().stream()
+                .filter(e -> e.getValue().length() < 16)
+                .collect(Collectors.toMap(
+                        i -> String.valueOf(i.getKey()),
+                        Map.Entry::getValue
+                ));
+        System.out.println(newMap);
 
-		String longName = Collections.max(newMap, Comparator.comparingInt(String::length)); // use map here: longName = map...
+		String longName = Collections
+                .max(newMap.entrySet(),Comparator.comparingInt(entry -> {
+                    return entry.getValue().length();
+                })).getValue(); // use map here: longName = map...
 
 		System.out.println("longName = " + longName);
 
