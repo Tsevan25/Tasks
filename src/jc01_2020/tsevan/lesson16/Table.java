@@ -7,7 +7,10 @@ public class Table {
     private String[][] field;
 
     public Table() {
-        this.field = new String[][]{{" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "}};
+        this.field = new String[][]{
+                {" ", " ", " "},
+                {" ", " ", " "},
+                {" ", " ", " "}};
     }
 
     public CheckGame getCheckGame() {
