@@ -1,7 +1,5 @@
 package jc01_2020.tsevan.lesson16;
 
-import jc01_2020.lesson16.CheckGame;
-
 public class Player extends Thread {
 
     private final Table table;
@@ -40,5 +38,5 @@ public class Player extends Thread {
             }
         }
     }
-
+//
 }

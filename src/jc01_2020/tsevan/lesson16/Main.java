@@ -8,15 +8,8 @@ package jc01_2020.tsevan.lesson16;
 *
 */
 
-import jc01_2020.lesson16.CheckGame;
-
-import javax.xml.transform.Result;
-import java.util.Arrays;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class Main {
-
+//
     public static void main(String[] args) throws InterruptedException{
         Table table = new Table();
 

@@ -1,7 +1,5 @@
 package jc01_2020.tsevan.lesson16;
 
-import jc01_2020.lesson16.CheckGame;
-
 public class Table {
     private CheckGame checkGame = null;
     private String[][] field;
@@ -129,7 +127,7 @@ public class Table {
                 count2++;
             }
         }
-
+//
         if (count1 == 3) {
             setCheckGame(CheckGame.result(figure));
             System.out.println("Итоговое игровое поле: \n");
