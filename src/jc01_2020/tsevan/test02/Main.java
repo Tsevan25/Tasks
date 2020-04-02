@@ -43,9 +43,10 @@ public class Main  extends  Thread {
             FileInputStream fileInputStream = new FileInputStream("src/jc01_2020/tsevan/test02/resource/secret.dat");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-             Helper helper = (Helper) objectInputStream.readObject();
+             @SuppressWarnings("NonAsciiCharacters") Повар повар;
+            повар = (Повар) objectInputStream.readObject();
 
-            System.out.println(helper);
+            System.out.println(повар);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
